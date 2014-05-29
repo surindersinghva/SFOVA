@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the sfova_school_and_communication feature.
+ */
+
+include_once 'sfova_school_and_communication.features.inc';

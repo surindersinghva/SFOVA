@@ -1,0 +1,72 @@
+<?php
+    
+/* Modified on 2014-05-23 0930 */
+
+/**
+ * Implements hook_form_alter().
+ */
+
+function email_langar_facilitator_cron() {
+    /* get current date */
+    $timestamp = time();   
+    $today = date("Y-m-d", $timestamp); 
+    $current = date("Y-m-d h:i:s", $timestamp);
+
+    /* check if today is Friday */  
+    if(date('D', $timestamp) === 'Fri') {   
+
+    /* set today + 10 days */ 
+    $target_date = date("Y-m-d", strtotime($current)+864000); 
+
+    /* set variable for next Friday, so the function runs once only on Fridays */
+    $ran = (strtotime($timestamp) + strtotime('+1 week'));
+    $ran = date("Y-m-d h:i:s", $ran);
+
+    /* verify the last date function was executed */
+    $ran_check = variable_get('daily_cron', $ran); 
+
+    /* check if today is greater than the last run */
+    if($current > $ran_check){    
+        $query = db_query("SELECT node.nid, node.type, node.title, field_data_field_staff_langar_week.entity_id, DATE_FORMAT(field_data_field_staff_langar_week.field_staff_langar_week_value,'%Y-%m-%d') as date FROM node LEFT JOIN field_data_field_staff_langar_week ON node.nid = field_data_field_staff_langar_week.entity_id WHERE node.type = 'staff' AND DATE_FORMAT(field_data_field_staff_langar_week.field_staff_langar_week_value,'%Y-%m-%d') = '$target_date' ORDER BY date ASC LIMIT 1 offset 0")->fetchAll();	
+            foreach($query as $value){
+                $nid = $value->nid;
+                $node = node_load($nid);
+                $email = $node->field_staff_email['und'][0]['value'];
+
+                /* set langar week start and end dates */
+                $langar_week = $value->date;
+                $langar_date = date("Y-m-d", strtotime($langar_week)-864000);                
+                $start_week = date("m/d", strtotime($langar_week)); 
+                $end_week = date("m/d", strtotime($langar_week)+518400); 
+  
+                if($today == $langar_date){
+                    // $to = "surindersinghva@gmail.com";
+                    $to = $email;
+                    $subject = "Langar Seva Week";
+                    $message = "
+                    <html>
+                    <body>
+                    <p>Dear $node->title Ji,</p>
+                    <p>Gurfateh!!</p>
+                    <p>This note is to give you a gentle reminder that the week of $start_week to $end_week is your week to facilitate the Lagar Seva.</p>
+                    <p> * For family sponsored Langars, please remind the sponsor family a day or two before their Seva. and help them as needed.<br />
+                        * If we do not have any family sponsoring Langar the Langar will be from SFV Sangat. For the Sangat sponsored Langars, you will be in-charge of making all arrangements. please keep keep Sangat sponsored Langars simple. Please let me or Surinder Pal Singh Ji (571 345 4808) know if we could be of help.</p>
+                    <p>Thank you,</p>
+                    <p>&nbsp;</p>
+                    <p>Ajaib Singh</p>
+                    </body>
+                    </html>
+                    ";
+                    
+                    $headers = "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                    $headers .= 'From: <admin@sfova.org>' . "\r\n";
+                    $headers .= 'Cc: surindersinghva@gmail.com' . "\r\n";
+                    
+                    mail($to,$subject,$message,$headers);
+                    variable_set('daily_cron', $ran); 
+                }          
+            } 
+        }
+    } 
+}

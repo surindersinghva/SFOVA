@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the sfova_media feature.
+ */
+
+include_once 'sfova_media.features.inc';

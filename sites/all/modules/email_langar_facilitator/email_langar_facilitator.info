@@ -1,0 +1,4 @@
+name = Email Langar Facilitator
+description = Reminder email to Langar Facilitator 10 days before their turn.
+core = 7.x
+package = Custom

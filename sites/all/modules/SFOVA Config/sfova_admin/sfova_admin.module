@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the sfova_admin feature.
+ */
+
+include_once 'sfova_admin.features.inc';
