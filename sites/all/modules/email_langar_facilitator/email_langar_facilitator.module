@@ -19,8 +19,7 @@ function email_langar_facilitator_cron() {
     $target_date = date("Y-m-d", strtotime($current)+864000); 
 
     /* set variable for next Friday, so the function runs once only on Fridays */
-    $ran = (strtotime($timestamp) + strtotime('+1 week'));
-    $ran = date("Y-m-d h:i:s", $ran);
+    $ran = date("Y-m-d h:i:s", strtotime($current)+604800);
 
     /* verify the last date function was executed */
     $ran_check = variable_get('daily_cron', $ran); 
