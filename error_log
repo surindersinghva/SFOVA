@@ -62,3 +62,30 @@
 [23-May-2014 08:42:21 America/New_York] PHP Parse error:  syntax error, unexpected 'm' (T_STRING) in /home5/sfovaorg/public_html/drupal/modules/php/php.module(80) : eval()'d code on line 16
 [23-May-2014 09:18:57 America/New_York] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL) in /home5/sfovaorg/public_html/drupal/modules/php/php.module(80) : eval()'d code on line 34
 [23-May-2014 09:19:33 America/New_York] PHP Parse error:  syntax error, unexpected '==' (T_IS_EQUAL) in /home5/sfovaorg/public_html/drupal/modules/php/php.module(80) : eval()'d code on line 34
+[24-Jun-2014 17:07:29 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[26-Jun-2014 13:02:23 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[27-Jun-2014 21:27:15 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[29-Jun-2014 04:26:59 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[30-Jun-2014 16:34:19 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[01-Jul-2014 22:27:41 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[01-Jul-2014 23:51:07 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[01-Jul-2014 23:52:08 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[01-Jul-2014 23:53:09 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[02-Jul-2014 10:21:28 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[02-Jul-2014 12:50:36 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[03-Jul-2014 17:54:09 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[05-Jul-2014 02:03:04 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[06-Jul-2014 14:32:38 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[08-Jul-2014 00:56:47 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[08-Jul-2014 09:31:28 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[09-Jul-2014 07:23:03 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[09-Jul-2014 09:18:38 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[10-Jul-2014 22:30:57 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[10-Jul-2014 22:32:23 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[10-Jul-2014 22:33:38 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[10-Jul-2014 22:34:39 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[11-Jul-2014 03:17:29 America/New_York] PHP Fatal error:  Call to a member function format() on a non-object in /home5/sfovaorg/public_html/drupal/sites/all/modules/date/date_api/date_api.module on line 1797
+[28-Jul-2014 09:47:09 America/Denver] PHP Warning:  POST Content-Length of 11173231 bytes exceeds the limit of 10485760 bytes in Unknown on line 0
+[29-Jul-2014 20:07:50 America/Denver] PHP Warning:  Maximum number of allowable file uploads has been exceeded in Unknown on line 0
+[29-Jul-2014 20:09:18 America/Denver] PHP Warning:  Maximum number of allowable file uploads has been exceeded in Unknown on line 0
+[29-Jul-2014 20:10:05 America/Denver] PHP Warning:  Maximum number of allowable file uploads has been exceeded in Unknown on line 0

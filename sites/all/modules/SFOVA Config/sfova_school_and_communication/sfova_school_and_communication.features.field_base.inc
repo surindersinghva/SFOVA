@@ -71,6 +71,32 @@ function sfova_school_and_communication_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_paid_for_camp'
+  $field_bases['field_paid_for_camp'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_paid_for_camp',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'Yes' => 'Yes',
+        'No' => 'No',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_parent_s_name'
   $field_bases['field_parent_s_name'] = array(
     'active' => 1,
@@ -234,6 +260,7 @@ function sfova_school_and_communication_field_default_field_bases() {
         3 => 'Speech Competition',
         4 => 'Turban Showdown',
         5 => 'Prabhat Feri',
+        6 => 'Registration Only',
       ),
       'allowed_values_function' => '',
     ),

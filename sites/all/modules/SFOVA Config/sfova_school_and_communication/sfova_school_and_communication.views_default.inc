@@ -331,6 +331,98 @@ print $age;
   $handler = $view->new_display('page', 'School', 'page');
   $handler->display->display_options['path'] = 'punjabi-school';
 
+  /* Display: Camp */
+  $handler = $view->new_display('page', 'Camp', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Camp';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = 'Sr. No.';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Date of Birth */
+  $handler->display->display_options['fields']['field_date_of_birth']['id'] = 'field_date_of_birth';
+  $handler->display->display_options['fields']['field_date_of_birth']['table'] = 'field_data_field_date_of_birth';
+  $handler->display->display_options['fields']['field_date_of_birth']['field'] = 'field_date_of_birth';
+  $handler->display->display_options['fields']['field_date_of_birth']['label'] = '';
+  $handler->display->display_options['fields']['field_date_of_birth']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_of_birth']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_of_birth']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = 'Age';
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$nid = $row->field_date_of_birth;
+$node = node_load($nid);
+$dob = strtotime($node->field_date_of_birth[\'und\'][0][\'value\']);
+$date1 = date("Y-m-d",$dob);
+$now = time();
+$date2 = date("Y-m-d",$now);
+$diff = abs(strtotime($date2) - strtotime($date1));
+$age = floor($diff /31536000);
+print $age;
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Paid (camp) */
+  $handler->display->display_options['fields']['field_paid_for_camp']['id'] = 'field_paid_for_camp';
+  $handler->display->display_options['fields']['field_paid_for_camp']['table'] = 'field_data_field_paid_for_camp';
+  $handler->display->display_options['fields']['field_paid_for_camp']['field'] = 'field_paid_for_camp';
+  $handler->display->display_options['fields']['field_paid_for_camp']['label'] = 'Paid';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date of Birth (field_date_of_birth) */
+  $handler->display->display_options['sorts']['field_date_of_birth_value']['id'] = 'field_date_of_birth_value';
+  $handler->display->display_options['sorts']['field_date_of_birth_value']['table'] = 'field_data_field_date_of_birth';
+  $handler->display->display_options['sorts']['field_date_of_birth_value']['field'] = 'field_date_of_birth_value';
+  $handler->display->display_options['sorts']['field_date_of_birth_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'registration' => 'registration',
+  );
+  /* Filter criterion: Content: Registration for (field_registration_for) */
+  $handler->display->display_options['filters']['field_registration_for_value']['id'] = 'field_registration_for_value';
+  $handler->display->display_options['filters']['field_registration_for_value']['table'] = 'field_data_field_registration_for';
+  $handler->display->display_options['filters']['field_registration_for_value']['field'] = 'field_registration_for_value';
+  $handler->display->display_options['filters']['field_registration_for_value']['value'] = array(
+    0 => '0',
+  );
+  $handler->display->display_options['path'] = 'gurmat-camp';
+
   /* Display: Attendance */
   $handler = $view->new_display('page', 'Attendance', 'page_2');
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -610,7 +702,6 @@ print $age;
   $handler->display->display_options['fields']['field_reg_email_address']['id'] = 'field_reg_email_address';
   $handler->display->display_options['fields']['field_reg_email_address']['table'] = 'field_data_field_reg_email_address';
   $handler->display->display_options['fields']['field_reg_email_address']['field'] = 'field_reg_email_address';
-  $handler->display->display_options['fields']['field_reg_email_address']['exclude'] = TRUE;
   /* Field: Content: Phone Number */
   $handler->display->display_options['fields']['field_phone_number']['id'] = 'field_phone_number';
   $handler->display->display_options['fields']['field_phone_number']['table'] = 'field_data_field_phone_number';
@@ -618,6 +709,11 @@ print $age;
   $handler->display->display_options['fields']['field_phone_number']['label'] = 'Phone';
   $handler->display->display_options['fields']['field_phone_number']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_phone_number']['delta_offset'] = '0';
+  /* Field: Content: Paid (camp) */
+  $handler->display->display_options['fields']['field_paid_for_camp']['id'] = 'field_paid_for_camp';
+  $handler->display->display_options['fields']['field_paid_for_camp']['table'] = 'field_data_field_paid_for_camp';
+  $handler->display->display_options['fields']['field_paid_for_camp']['field'] = 'field_paid_for_camp';
+  $handler->display->display_options['fields']['field_paid_for_camp']['label'] = 'Paid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -639,7 +735,7 @@ print $age;
   $handler->display->display_options['filters']['field_registration_for_value']['table'] = 'field_data_field_registration_for';
   $handler->display->display_options['filters']['field_registration_for_value']['field'] = 'field_registration_for_value';
   $handler->display->display_options['filters']['field_registration_for_value']['value'] = array(
-    3 => '3',
+    0 => '0',
   );
   $handler->display->display_options['path'] = 'master-list-export';
   $export['punjabi_school'] = $view;
